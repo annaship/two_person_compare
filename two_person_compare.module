@@ -1,0 +1,23 @@
+<?php
+// $Id: two_person_compare.module,v 1.1 2011/02/01 20:27:20 ashipunova Exp ashipunova $
+/*
+ * Form to compare two checked person
+ * ?q=two_person_compare
+*/
+
+function two_person_compare_menu() {
+  
+  $items = array();
+  $items['two_person_compare'] = array (
+    'title' => t('Comparison between two person data'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('two_person_compare_form'),
+    'access arguments' => array('administer nodes'),
+    'type' => MENU_CALLBACK,
+    'file' => 'two_person_compare_form.inc',
+    );
+  return $items;
+}
+
+
+

@@ -1,0 +1,6 @@
+; $Id: two_person_compare.info,v 1.0 2011-02-01 ashipunova Exp ashipunova $
+name = Two Person Comparison
+description = "Comparison between two person data"
+core = 6.x  
+package = Metadata upload
+

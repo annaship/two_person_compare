@@ -1,0 +1,6 @@
+<?php
+
+  function two_person_compare_uninstall() {
+  }
+
+?>
