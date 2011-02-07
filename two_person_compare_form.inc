@@ -75,7 +75,7 @@ function two_person_compare_theme($existing, $type, $theme, $path) {
 function theme_two_person_compare_form_table($container) {
 
   // Define header row for the table
-//  $header = array('1','2');
+$header = //array('1','2');
   array(
       t(''),
       t('First Person'),

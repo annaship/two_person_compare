@@ -1,101 +1,101 @@
-<?php
-// $Id: two_person_compare.test,v 1.1 2011/02/01 20:27:21 ashipunova Exp ashipunova $
-
-/**
- * @file
- * test file for two_person_compare module.
- */
-
-/**
- * Default test case for the two_person_compare module.
- */
-class EMLConfigTestCase extends DrupalWebTestCase {
-
-  public static function getInfo() {
-    return array(
-      'name' => 'EML config',
-      'description' => 'Various tests on the two_person_compare module.' ,
-      'group' => 'LTER',
-    );
-  }
-
-  function setUp() {
-    parent::setUp('two_person_compare');
-  }
-
-  /**
-   * Test the element_example form for correct behavior.
-   */
-   
-   // function testEMLConfigNoUser() {
-   //   // global $user;
-   //   // $this->drupalLogout($user);
-   //   // $anonym = user_load(0);
-   //   // $this->drupalLogin($anonym);
-   //   // Logout and retrieve the page as an anonymous user
-   //   // Must not pass!
-   //   $this->drupalLogout();
-   //   $this->drupalGet('two_person_compare');
-   //   $this->assertText(t('User login'), t('Check that user is prompted to login'));
-   //   
-   // }
-   
-   
-  function testEMLConfigExample() {
-    $this->drupalGet('two_person_compare');
-    
-    // $this->drupalGet('two_person_compare');
-    $this->assertText(t('Site name acronym'));
-        
-    // Make one basic POST with a set of values and check for correct responses.
-    $edit = array(
-      'acronym' => 'ver',
-      'language' => 'english',
-      'intellectual_rights' => 'Here we are!',
-      'persons[metadataProvider][organization]' => 'LTER org',
-      'persons[metadataProvider][address]' => 'address',
-      'persons[metadataProvider][city]' => 'Aaa',
-      'persons[metadataProvider][state]' => 'MD',
-      'persons[metadataProvider][zipcode]' => '02536',
-      'persons[metadataProvider][country]' => 'Ukraine',
-      'persons[metadataProvider][phone]' => '',
-      'persons[metadataProvider][fax]' => '',
-      'persons[metadataProvider][email]' => 'email@example.com',
-
-      'persons[publisher][organization]' => 'LTER org',
-      'persons[publisher][address]' => 'address',
-      'persons[publisher][city]' => 'Aaa',
-      'persons[publisher][state]' => 'MD',
-      'persons[publisher][zipcode]' => '02536',
-      'persons[publisher][country]' => 'Ukraine',
-      'persons[publisher][phone]' => '',
-      'persons[publisher][fax]' => '',
-      'persons[publisher][email]' => 'email@example.com',      
-    );
-    $this->drupalPost('two_person_compare/two_person_compare_example', $edit, t('Create'));
-    $this->assertText('Your EML settings have been saved');
-
-    $this->drupalGet('two_person_compare/two_person_compare_example');
-    $this->verbose('City created: ' . var_export($edit['persons[metadataProvider][city]'], TRUE));
-    // $this->assertText(t('@value', array('@value' => $edit['persons[metadataProvider][city]'])));
-    
-    // $this->assertText(t('Metadata Provider\'s email is @value', 
-    //         array('@value' => $edit['persons[metadataProvider][email]'])));
-  
-    // $this->assertText(t('two_person_compare_textfield has value @value', array('@value' => $edit['two_person_compare_textfield'])));
-    // $this->assertText(t('two_person_compare_checkbox has value 1'));
-    // $this->assertPattern(t('/areacode.*!areacode/', array('!areacode' => $edit['two_person_compare_element_discrete[areacode]'])));
-    // $this->assertPattern(t('/prefix.*!prefix/', array('!prefix' => $edit['two_person_compare_element_discrete[prefix]'])));
-    // $this->assertPattern(t('/extension.*!extension/', array('!extension' => $edit['two_person_compare_element_discrete[extension]'])));
-    // 
-    // $this->assertText(t('two_person_compare_element_combined has value @value', array('@value' => $edit['two_person_compare_element_combined[areacode]'] . $edit['two_person_compare_element_combined[prefix]'] . $edit['two_person_compare_element_combined[extension]'])));
-    // 
-    // // Now flip the checkbox and check for correct behavior.
-    // $edit['two_person_compare_checkbox'] = FALSE;
-    // $this->drupalPost('examples/two_person_compare/element_example', $edit, t('Submit'));
-    // $this->assertText(t('two_person_compare_checkbox has value 0'));
-  }
-
-
-}
-
+//<?php
+//// $Id: two_person_compare.test,v 1.1 2011/02/01 20:27:21 ashipunova Exp ashipunova $
+//
+///**
+// * @file
+// * test file for two_person_compare module.
+// */
+//
+///**
+// * Default test case for the two_person_compare module.
+// */
+//class EMLConfigTestCase extends DrupalWebTestCase {
+//
+//  public static function getInfo() {
+//    return array(
+//      'name' => 'EML config',
+//      'description' => 'Various tests on the two_person_compare module.' ,
+//      'group' => 'LTER',
+//    );
+//  }
+//
+//  function setUp() {
+//    parent::setUp('two_person_compare');
+//  }
+//
+//  /**
+//   * Test the element_example form for correct behavior.
+//   */
+//
+//   // function testEMLConfigNoUser() {
+//   //   // global $user;
+//   //   // $this->drupalLogout($user);
+//   //   // $anonym = user_load(0);
+//   //   // $this->drupalLogin($anonym);
+//   //   // Logout and retrieve the page as an anonymous user
+//   //   // Must not pass!
+//   //   $this->drupalLogout();
+//   //   $this->drupalGet('two_person_compare');
+//   //   $this->assertText(t('User login'), t('Check that user is prompted to login'));
+//   //
+//   // }
+//
+//
+//  function testEMLConfigExample() {
+//    $this->drupalGet('two_person_compare');
+//
+//    // $this->drupalGet('two_person_compare');
+//    $this->assertText(t('Site name acronym'));
+//
+//    // Make one basic POST with a set of values and check for correct responses.
+//    $edit = array(
+//      'acronym' => 'ver',
+//      'language' => 'english',
+//      'intellectual_rights' => 'Here we are!',
+//      'persons[metadataProvider][organization]' => 'LTER org',
+//      'persons[metadataProvider][address]' => 'address',
+//      'persons[metadataProvider][city]' => 'Aaa',
+//      'persons[metadataProvider][state]' => 'MD',
+//      'persons[metadataProvider][zipcode]' => '02536',
+//      'persons[metadataProvider][country]' => 'Ukraine',
+//      'persons[metadataProvider][phone]' => '',
+//      'persons[metadataProvider][fax]' => '',
+//      'persons[metadataProvider][email]' => 'email@example.com',
+//
+//      'persons[publisher][organization]' => 'LTER org',
+//      'persons[publisher][address]' => 'address',
+//      'persons[publisher][city]' => 'Aaa',
+//      'persons[publisher][state]' => 'MD',
+//      'persons[publisher][zipcode]' => '02536',
+//      'persons[publisher][country]' => 'Ukraine',
+//      'persons[publisher][phone]' => '',
+//      'persons[publisher][fax]' => '',
+//      'persons[publisher][email]' => 'email@example.com',
+//    );
+//    $this->drupalPost('two_person_compare/two_person_compare_example', $edit, t('Create'));
+//    $this->assertText('Your EML settings have been saved');
+//
+//    $this->drupalGet('two_person_compare/two_person_compare_example');
+//    $this->verbose('City created: ' . var_export($edit['persons[metadataProvider][city]'], TRUE));
+//    // $this->assertText(t('@value', array('@value' => $edit['persons[metadataProvider][city]'])));
+//
+//    // $this->assertText(t('Metadata Provider\'s email is @value',
+//    //         array('@value' => $edit['persons[metadataProvider][email]'])));
+//
+//    // $this->assertText(t('two_person_compare_textfield has value @value', array('@value' => $edit['two_person_compare_textfield'])));
+//    // $this->assertText(t('two_person_compare_checkbox has value 1'));
+//    // $this->assertPattern(t('/areacode.*!areacode/', array('!areacode' => $edit['two_person_compare_element_discrete[areacode]'])));
+//    // $this->assertPattern(t('/prefix.*!prefix/', array('!prefix' => $edit['two_person_compare_element_discrete[prefix]'])));
+//    // $this->assertPattern(t('/extension.*!extension/', array('!extension' => $edit['two_person_compare_element_discrete[extension]'])));
+//    //
+//    // $this->assertText(t('two_person_compare_element_combined has value @value', array('@value' => $edit['two_person_compare_element_combined[areacode]'] . $edit['two_person_compare_element_combined[prefix]'] . $edit['two_person_compare_element_combined[extension]'])));
+//    //
+//    // // Now flip the checkbox and check for correct behavior.
+//    // $edit['two_person_compare_checkbox'] = FALSE;
+//    // $this->drupalPost('examples/two_person_compare/element_example', $edit, t('Submit'));
+//    // $this->assertText(t('two_person_compare_checkbox has value 0'));
+//  }
+//
+//
+//}
+//
